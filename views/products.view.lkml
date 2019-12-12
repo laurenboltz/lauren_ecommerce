@@ -30,7 +30,7 @@ view: products {
      <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0024/5906/brand.gif?itok=1S4DL3m9" />
      {% elsif brand._value == "Calvin Klein" %}
      <img src="https://logos-download.com/wp-content/uploads/2016/02/CK_logo-700x685.png" height="400" width="400">
-    {% elseif %}
+    {% else %}
      <img src="https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg">
     {% endif %};;
   }
