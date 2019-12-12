@@ -12,7 +12,7 @@ view: products {
     type: string
     sql:
    CASE
-  WHEN ${TABLE}.brand = "Coach" then "Coach"
+  WHEN ${TABLE}.brand = "Calvin Klein" then "Calvin Klein"
   WHEN ${TABLE}.brand = "O'Neill" then "O'Neill"
   ELSE "Other"
   End;;
@@ -28,9 +28,9 @@ view: products {
     html:
      {% if brand._value == "O'Neill" %}
      <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0024/5906/brand.gif?itok=1S4DL3m9" />
-     {% elsif brand._value == "Coach" %}
-     <img src="https://1000logos.net/wp-content/uploads/2016/11/Coach-Logo.png" width="400" height="250">
-    {% else %}
+     {% elsif brand._value == "Calvin Klein" %}
+     <img src="https://logos-download.com/wp-content/uploads/2016/02/CK_logo-700x685.png" height="400" width="400">
+    {% elseif %}
      <img src="https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg">
     {% endif %};;
   }
