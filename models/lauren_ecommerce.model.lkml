@@ -11,14 +11,6 @@ datagroup: lauren_ecommerce_default_datagroup {
 persist_with: lauren_ecommerce_default_datagroup
 
 
-explore: events {
-  join: users {
-    type: left_outer
-    sql_on: ${events.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
 
 explore: inventory_items {
   join: products {
@@ -70,15 +62,4 @@ explore: pending_orders {
   }
 }
 
-explore: products {}
-
-
-explore: user_data {
-  join: users {
-    type: left_outer
-    sql_on: ${user_data.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: users {}
+# explore: persons {}
