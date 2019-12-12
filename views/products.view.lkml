@@ -10,7 +10,11 @@ view: products {
 
   dimension: brand {
     type: string
-    sql: ${TABLE}.brand ;;
+    sql:
+   CASE WHEN ${TABLE}.brand = "Coach" then Coach
+  WHEN ${TABLE}.brand = "O'Neill" then O'Neill
+  ELSE Other
+  End;;
   }
 
   dimension: brand_logo {
@@ -24,7 +28,7 @@ view: products {
      {% if brand._value == "O'Neill" %}
      <img src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0024/5906/brand.gif?itok=1S4DL3m9" />
      {% elsif brand._value == "Coach" %}
-     <img src="https://1000logos.net/wp-content/uploads/2016/11/Coach-Logo.png">
+     <img src="https://1000logos.net/wp-content/uploads/2016/11/Coach-Logo.png" width="400" height="250">
     {% else %}
      <img src="https://icon-library.net/images/no-image-available-icon/no-image-available-icon-6.jpg">
     {% endif %};;
