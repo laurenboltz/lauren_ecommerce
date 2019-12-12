@@ -11,7 +11,8 @@ view: products {
   dimension: brand {
     type: string
     sql:
-   CASE WHEN ${TABLE}.brand = "Coach" then "Coach"
+   CASE
+  WHEN ${TABLE}.brand = "Coach" then "Coach"
   WHEN ${TABLE}.brand = "O'Neill" then "O'Neill"
   ELSE "Other"
   End;;
