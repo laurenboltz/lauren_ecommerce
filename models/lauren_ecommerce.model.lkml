@@ -10,12 +10,6 @@ datagroup: lauren_ecommerce_default_datagroup {
 
 persist_with: lauren_ecommerce_default_datagroup
 
-explore: calendar_table {}
-
-explore: connection_reg_r3 {}
-
-explore: epoch_test {}
-
 explore: events {
   join: users {
     type: left_outer
@@ -23,8 +17,6 @@ explore: events {
     relationship: many_to_one
   }
 }
-
-explore: ints {}
 
 explore: inventory_items {
   join: products {
@@ -75,16 +67,10 @@ explore: pending_orders {
     relationship: many_to_one
   }
 }
-
-explore: persons {}
-
 # explore: persons {}
 
 explore: products {}
 
-explore: schema_migrations {}
-
-explore: test_img {}
 
 explore: user_data {
   join: users {
@@ -95,9 +81,3 @@ explore: user_data {
 }
 
 explore: users {}
-
-explore: users_nn {}
-
-explore: xin_test_for_bug {}
-
-explore: xin_test_for_bug2 {}
