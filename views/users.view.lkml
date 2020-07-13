@@ -1,5 +1,5 @@
 view: users {
-  sql_table_name: public.users ;;
+  sql_table_name: demo_db.users ;;
   drill_fields: [id]
 
   dimension: id {
@@ -16,7 +16,23 @@ view: users {
   dimension: city {
     type: string
     sql: ${TABLE}.city ;;
+    link: {
+      label: "City Metrics Explore"
+      url: "https://master.dev.looker.com/explore/lauren_ecommerce_docs/order_items?fields=users.city,orders.count,users.count&f[users.city]={{ value }}&sorts=orders.count+desc&limit=500"
+    }
+    link: {
+      label: "City Dashboard"
+      url: "https://master.dev.looker.com/dashboards-next/4145?City={{ _filters['users.city'] | url_encode }}"
+    }
   }
+
+  dimension: age_tier {
+    type: tier
+    tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80]
+    style: integer
+    sql: ${age} ;;
+  }
+
 
   dimension: country {
     type: string
@@ -77,11 +93,10 @@ view: users {
   set: detail {
     fields: [
       id,
-      last_name,
       first_name,
+      last_name,
       events.count,
       orders.count,
-      pending_orders.count,
       user_data.count
     ]
   }

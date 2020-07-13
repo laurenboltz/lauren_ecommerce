@@ -1,5 +1,5 @@
 view: events {
-  sql_table_name: public.events ;;
+  sql_table_name: demo_db.events ;;
   drill_fields: [id]
 
   dimension: id {
@@ -40,6 +40,6 @@ view: events {
 
   measure: count {
     type: count
-    drill_fields: [id, users.last_name, users.id, users.first_name]
+    drill_fields: [id, users.id, users.first_name, users.last_name]
   }
 }

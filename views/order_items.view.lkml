@@ -1,11 +1,17 @@
 view: order_items {
-  sql_table_name: public.order_items ;;
+  sql_table_name: demo_db.order_items ;;
   drill_fields: [id]
 
   dimension: id {
     primary_key: yes
     type: number
     sql: ${TABLE}.id ;;
+  }
+
+  dimension: inventory_item_id {
+    type: number
+    # hidden: yes
+    sql: ${TABLE}.inventory_item_id ;;
   }
 
   parameter: item_to_add_up {
@@ -24,6 +30,22 @@ view: order_items {
     }
   }
 
+  parameter: number_of_results {
+    type: string
+    allowed_value: {
+      label: "Less than 500"
+      value: "< 500"
+    }
+    allowed_value: {
+      label: "Less than 10,000"
+      value: "< 10000"
+    }
+    allowed_value: {
+      label: "All Results"
+      value: "> 0"
+    }
+  }
+
   dimension: profit {
     type: number
     sql: ${sale_price} - ${inventory_items.cost} ;;
@@ -31,24 +53,6 @@ view: order_items {
   dimension: cost {
     type: number
     sql: ${inventory_items.cost};;
-  }
-
-  measure: dynamic_sum {
-    type: sum
-    sql: ${% parameter item_to_add_up %} ;;
-    value_format_name: "usd"
-    label_from_parameter: item_to_add_up
-  }
-
-  dimension: sale_price {
-    type: number
-    sql: ${TABLE}.sale_price ;;
-  }
-
-  dimension: inventory_item_id {
-    type: number
-    # hidden: yes
-    sql: ${TABLE}.inventory_item_id ;;
   }
 
   dimension: order_id {
@@ -71,10 +75,19 @@ view: order_items {
     sql: ${TABLE}.returned_at ;;
   }
 
-
+  dimension: sale_price {
+    type: number
+    sql: ${TABLE}.sale_price ;;
+  }
+  measure: dynamic_sum {
+    type: sum
+    sql: ${TABLE}.{% parameter item_to_add_up %} ;;
+    value_format_name: "usd"
+    label_from_parameter: item_to_add_up
+  }
 
   measure: count {
     type: count
-    drill_fields: [id, orders.id, inventory_items.id]
+    drill_fields: [id, inventory_items.id, orders.id]
   }
 }
