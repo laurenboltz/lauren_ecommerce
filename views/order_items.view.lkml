@@ -28,31 +28,19 @@ view: order_items {
       label: "Total Profit"
       value: "profit"
     }
-  }
-
-  parameter: number_of_results {
-    type: string
-    allowed_value: {
-      label: "Less than 500"
-      value: "< 500"
-    }
-    allowed_value: {
-      label: "Less than 10,000"
-      value: "< 10000"
-    }
-    allowed_value: {
-      label: "All Results"
-      value: "> 0"
-    }
+    description: "Use this filter with the Dynamic Sum measure to choose the field to total."
   }
 
   dimension: profit {
     type: number
     sql: ${sale_price} - ${inventory_items.cost} ;;
+    description: "The difference between an item's sale price and an item's cost."
   }
+
   dimension: cost {
     type: number
     sql: ${inventory_items.cost};;
+    description: "The cost of an item."
   }
 
   dimension: order_id {
@@ -78,12 +66,14 @@ view: order_items {
   dimension: sale_price {
     type: number
     sql: ${TABLE}.sale_price ;;
+    description: "The price at which an item is set to sell."
   }
   measure: dynamic_sum {
     type: sum
     sql: ${TABLE}.{% parameter item_to_add_up %} ;;
     value_format_name: "usd"
     label_from_parameter: item_to_add_up
+    description: "Use this field in conjunctionwith the Item to Add Up filter to select the field to total."
   }
 
   measure: count {
