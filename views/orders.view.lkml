@@ -22,6 +22,7 @@ view: orders {
       label: "Break down by Month"
       value: "month"
     }
+    description: "Choose the granularity of time by which to group results."
   }
 
   dimension: looker_image {
@@ -71,6 +72,7 @@ view: orders {
         label: "Contact Warehouse Support"
         url: "mailto:warehouse@brettcase.com"
       }
+      description: "The current status of an existing order."
     }
 
     dimension: user_id {

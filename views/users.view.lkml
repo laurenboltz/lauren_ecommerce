@@ -31,6 +31,7 @@ view: users {
     tiers: [0, 10, 20, 30, 40, 50, 60, 70, 80]
     style: integer
     sql: ${age} ;;
+    description: "This field is for grouping measures to analyze activity and trends by age group."
   }
 
 
@@ -38,6 +39,7 @@ view: users {
     type: string
     map_layer_name: countries
     sql: ${TABLE}.country ;;
+    description: "The country in which a user resides."
   }
 
   dimension_group: created {
@@ -52,11 +54,13 @@ view: users {
       year
     ]
     sql: ${TABLE}.created_at ;;
+    description: "The date on which a user created an account."
   }
 
   dimension: email {
     type: string
     sql: ${TABLE}.email ;;
+    description: "Email address associated with a user account."
   }
 
   dimension: first_name {
