@@ -1,5 +1,5 @@
 view: pending_orders {
-  sql_table_name: demo_db.pending_orders ;;
+  sql_table_name: public.pending_orders ;;
   drill_fields: [id]
 
   dimension: id {
