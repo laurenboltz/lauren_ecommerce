@@ -1,4 +1,4 @@
-connection: "thelook"
+connection: "thelook_events"
 
 # include all the views
 include: "/views/**/*.view"
