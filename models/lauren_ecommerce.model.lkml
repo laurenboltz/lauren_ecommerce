@@ -1,4 +1,4 @@
-connection: "thelook_events"
+connection: "ecommerce_demo"
 
 # include all the views
 include: "/views/**/*.view"
