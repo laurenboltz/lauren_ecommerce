@@ -31,6 +31,7 @@ explore: inventory_items {
 explore: order_items {
   group_label: "eCommerce"
   query: order_count_by_month {
+    label: "Order count by month"
     description: "Number of orders placed by month in 2019"
     dimensions: [orders.created_month]
     measures: [orders.count]
@@ -45,6 +46,7 @@ explore: order_items {
     filters: [users.state: "California"]
   }
   query: order_count_by_state_by_month {
+    label: "Order count by state by month"
     description: "Monthly order count and user count by state"
     dimensions: [orders.created_month, users.state]
     measures: [orders.count, users.count]
