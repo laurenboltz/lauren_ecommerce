@@ -30,6 +30,12 @@ explore: inventory_items {
 
 explore: order_items {
   group_label: "eCommerce"
+  query: order_count_by_month {
+    description: "Number of orders placed by month in 2019"
+    dimensions: [orders.created_month]
+    measures: [orders.count]
+    filters: [orders.created_date: "2019"]
+  }
   query: CA_order_count_by_month {
     label: "CA order count by month"
     description: "Number of orders placed in California by month in 2019"
