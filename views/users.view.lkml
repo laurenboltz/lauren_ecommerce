@@ -11,7 +11,6 @@ view: users {
   dimension: age {
     type: number
     sql: ${TABLE}.age ;;
-    view_label: "Order Items"
   }
 
   dimension: city {
@@ -33,7 +32,6 @@ view: users {
     style: integer
     sql: ${age} ;;
     description: "This field is for grouping measures to analyze activity and trends by age group."
-    view_label: "Order Items"
   }
 
 
@@ -63,7 +61,6 @@ view: users {
     type: string
     sql: ${TABLE}.email ;;
     description: "Email address associated with a user account."
-    view_label: "Order Items"
   }
 
   dimension: first_name {
