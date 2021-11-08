@@ -1,4 +1,4 @@
-connection: "thelook"
+connection: "ecommerce_demo"
 
 # include all the views
 include: "/views/**/*.view"
@@ -29,13 +29,24 @@ explore: inventory_items {
 }
 
 explore: order_items {
+  group_label: "LoBo eCommerce"
   query: order_count_by_month {
+    label: "Order count by month"
     description: "Number of orders placed by month in 2019"
     dimensions: [orders.created_month]
     measures: [orders.count]
     filters: [orders.created_date: "2019"]
   }
+  query: CA_order_count_by_month {
+    label: "CA order count by month"
+    description: "Number of orders placed in California by month in 2019"
+    dimensions: [orders.created_month]
+    measures: [orders.count]
+    filters: [orders.created_date: "2019"]
+    filters: [users.state: "California"]
+  }
   query: order_count_by_state_by_month {
+    label: "Order count by state by month"
     description: "Monthly order count and user count by state"
     dimensions: [orders.created_month, users.state]
     measures: [orders.count, users.count]
@@ -68,6 +79,7 @@ explore: order_items {
 }
 
 explore: orders {
+  group_label: "eCommerce"
   join: users {
     type: left_outer
     sql_on: ${orders.user_id} = ${users.id} ;;
@@ -75,7 +87,11 @@ explore: orders {
   }
 }
 
-explore: products {}
+explore: products {
+  group_label: "eCommerce"
+}
 
 
-explore: users {}
+explore: users {
+  group_label: "eCommerce"
+}

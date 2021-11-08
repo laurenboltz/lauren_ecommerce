@@ -25,11 +25,11 @@ view: orders {
     description: "Choose the granularity of time by which to group results."
   }
 
-  dimension: looker_image {
-    type: string
-    sql: 1=1;;
-    html: <img src="https://looker.com/assets/img/images/logos/looker_black.svg" height="25" width="auto"/> ;;
-  }
+  # dimension: looker_image {
+  #   type: string
+  #   sql: 1=1;;
+  #   html: <img src="https://looker.com/assets/img/images/logos/looker_black.svg" height="25" width="auto"/> ;;
+  # }
 
 
   dimension_group: created {
