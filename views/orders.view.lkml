@@ -80,11 +80,6 @@ view: orders {
       # hidden: yes
       sql: ${TABLE}.user_id ;;
     }
-    
-    dimension: bad_state {
-    type: string
-    sql: 1=1 ;;
-    }
 
     measure: count {
       type: count
