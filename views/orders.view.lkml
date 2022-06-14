@@ -80,12 +80,6 @@ view: orders {
       # hidden: yes
       sql: ${TABLE}.user_id ;;
     }
-    
-    dimesnion: pizza_pants {
-      type: number
-      #hidden: yes
-      sql: 1=1 ;;
-    }
 
     measure: count {
       type: count
