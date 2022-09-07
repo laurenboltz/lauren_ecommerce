@@ -29,7 +29,7 @@ explore: inventory_items {
 }
 
 explore: order_items {
-  group_label: "LoBo eCommerce"
+  group_label: "LoBo's eCommerce"
   query: order_count_by_month {
     label: "Order count by month"
     description: "Number of orders placed by month in 2019"
@@ -78,20 +78,20 @@ explore: order_items {
   }
 }
 
-explore: orders {
-  group_label: "eCommerce"
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
+# explore: orders {
+#   group_label: "eCommerce"
+#   join: users {
+#     type: left_outer
+#     sql_on: ${orders.user_id} = ${users.id} ;;
+#     relationship: many_to_one
+#   }
+# }
 
-explore: products {
-  group_label: "eCommerce"
-}
+# explore: products {
+#   group_label: "eCommerce"
+# }
 
 
-explore: users {
-  group_label: "eCommerce"
-}
+# explore: users {
+#   group_label: "eCommerce"
+# }

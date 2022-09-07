@@ -85,4 +85,31 @@ view: orders {
       type: count
       drill_fields: [id, users.id, users.first_name, users.last_name, order_items.count]
     }
+  # measure: returned_count { # Explore Top 20 for More Powerful Data Drilling
+  #   type: count_distinct
+  #   sql: ${id} ;;
+  #   link: {
+  #     label: "Explore Top 20 Results"
+  #     url: "{{ link }}&limit=20"
+  #   }
+  # }
+
+  # measure: returned_count { #Explore Top 20 by Sale Price for More Powerful Data Drilling
+  #   type: count_distinct
+  #   sql: ${id} ;;
+  #   link: {
+  #     label: "Explore Top 20 Results by Sale Price"
+  #     url: "{{ link }}&sorts=order_items.sale_price+desc&limit=20"
+  #   }
+  # }
+
+  # measure: order_count { # Explore Total Sale Price by Month for each age tier for More Powerful Data Drilling
+  #   type: count_distinct
+  #   link: {
+  #     label: "Total Sale Price by Month for Each Age Tier"
+  #     url: "{{link}}&pivots=users.age_tier"
+  #   }
+  #   sql: ${id} ;;
+  # }
+
   }

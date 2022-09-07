@@ -81,12 +81,30 @@ view: users {
   dimension: state {
     type: string
     sql: ${TABLE}.state ;;
-    link: {
-      label: "Google"
-      url: "http://www.google.com/search?q={{ value }}"
-      icon_url: "http://google.com/favicon.ico"
-    }
+    # link: {
+    #   label: "Google"
+    #   url: "http://www.google.com/search?q={{ value }}"
+    #   icon_url: "http://google.com/favicon.ico"
+    # }
   }
+
+  # dimension: state_flag_image {
+  #   type: string
+  #   sql: ${state} ;;
+  #   html:
+  #             {% if state._value == "California" %}
+  #             <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" height="170" width="255">
+  #             {% elsif state._value == "New York" %}
+  #             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_New_York.svg/1200px-Flag_of_New_York.svg.png" height="170" width="255">
+  #             {% elsif state._value == "Colorado" %}
+  #             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Flag_of_Colorado.svg/255px-Flag_of_Colorado.svg.png">
+  #             {% elsif state._value == "Illinois"%}
+  #             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Flag_of_Illinois.svg/1200px-Flag_of_Illinois.svg.png" height="170" width="255">
+  #             {% else %}
+  #             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png" height="170" width="170>
+  #             {% endif %} ;;
+  # }
+
 
   dimension: zip {
     type: zipcode
