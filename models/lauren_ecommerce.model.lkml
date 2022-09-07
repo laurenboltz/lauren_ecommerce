@@ -11,23 +11,6 @@ datagroup: lauren_ecommerce_docs_default_datagroup {
 persist_with: lauren_ecommerce_docs_default_datagroup
 
 
-
-explore: events {
-  join: users {
-    type: left_outer
-    sql_on: ${events.user_id} = ${users.id} ;;
-    relationship: many_to_one
-  }
-}
-
-explore: inventory_items {
-  join: products {
-    type: left_outer
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-}
-
 explore: order_items {
   group_label: "LoBo's eCommerce"
   query: order_count_by_month {
@@ -94,4 +77,22 @@ explore: order_items {
 
 # explore: users {
 #   group_label: "eCommerce"
+# }
+
+
+
+# explore: events {
+#   join: users {
+#     type: left_outer
+#     sql_on: ${events.user_id} = ${users.id} ;;
+#     relationship: many_to_one
+#   }
+# }
+
+# explore: inventory_items {
+#   join: products {
+#     type: left_outer
+#     sql_on: ${inventory_items.product_id} = ${products.id} ;;
+#     relationship: many_to_one
+#   }
 # }
