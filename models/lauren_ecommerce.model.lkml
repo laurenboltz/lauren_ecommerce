@@ -1,6 +1,6 @@
-# connection: "ecommerce_demo"
+connection: "ecommerce_demo"
 
-connection: "thelook_bigquery"
+# connection: "thelook_bigquery"
 
 # include all the views
 include: "/views/**/*.view"
