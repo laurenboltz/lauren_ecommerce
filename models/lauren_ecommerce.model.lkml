@@ -13,6 +13,7 @@ datagroup: lauren_ecommerce_docs_default_datagroup {
 persist_with: lauren_ecommerce_docs_default_datagroup
 
 
+
 explore: order_items {
   group_label: "LoBo's eCommerce"
   query: order_count_by_month {
