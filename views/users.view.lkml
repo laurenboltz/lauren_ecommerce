@@ -111,6 +111,12 @@ view: users {
     sql: ${TABLE}.zip ;;
   }
 
+  measure: measure_for_age { ## replace with a new name
+    description: "Use this age field for displaying age on the y-axis"
+    type: number
+    sql: ${age} + (0*${count}) ;; ## replace with your dimension
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
