@@ -97,8 +97,8 @@ view: order_items {
   }
 
   measure: percent_of_total_profit {
-    type:  number
-    sql: (${profit}/${total_profit})*100 ;;
+    type:  percent_of_total
+    sql: ${profit} ;;
     value_format_name: percent_2
   }
 }
