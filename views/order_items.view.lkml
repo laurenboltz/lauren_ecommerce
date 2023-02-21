@@ -69,11 +69,6 @@ view: order_items {
     description: "The price at which an item is set to sell."
   }
 
-  dimension: gross_margin {
-    type: number
-    sql: ${profit} ;;
-    description: "The sale price minus the cost of an item."
-  }
 
   measure: dynamic_sum {
     type: sum
@@ -94,17 +89,16 @@ view: order_items {
     value_format_name: "usd"
   }
 
-  measure: total_gross_margin {
+  measure: total_profit {
     type: sum
+    sql: ${profit} ;;
     value_format_name: "usd"
-    sql: ${gross_margin} ;;
-    html: {{ rendered_value }} | {{percent_of_gross_margin._rendered_value }} of total ;;
-
+    html: {{ rendered_value }} | {{percent_of_total_profit._rendered_value }} of total ;;
   }
 
-  measure: percent_of_gross_margin {
-    type: number
-    sql: ((${total_gross_margin}-${total_cost})/${total_gross_margin}) ;;
+  measure: percent_of_total_profit {
+    type:  number
+    sql: (${profit}/${total_profit})*100 ;;
     value_format_name: percent_2
   }
 }
