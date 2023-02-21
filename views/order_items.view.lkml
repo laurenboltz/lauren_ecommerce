@@ -88,16 +88,23 @@ view: order_items {
     drill_fields: [id, inventory_items.id, orders.id]
   }
 
+  measure: total_cost {
+    type: sum
+    sql: ${cost} ;;
+    value_format_name: "usd"
+  }
+
   measure: total_gross_margin {
     type: sum
     value_format_name: decimal_2
-    sql: ${profit} ;;
+    sql: ${gross_margin} ;;
+    html: {{ rendered_value }} | {{percent_of_gross_margin._rendered_value }} of total ;;
+
   }
 
   measure: percent_of_gross_margin {
-    type: sum
+    type: number
+    sql: ((${total_cost}-${total_gross_margin})/${total_gross_margin}) ;;
     value_format_name: percent_2
-    sql: ${gross_margin} ;;
-    html: {{ rendered_value }} | {{percent_of_gross_margin._rendered_value }} of total ;;
   }
 }
