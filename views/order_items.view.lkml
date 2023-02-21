@@ -68,6 +68,13 @@ view: order_items {
     sql: ${TABLE}.sale_price ;;
     description: "The price at which an item is set to sell."
   }
+
+  dimension: gross_margin {
+    type: number
+    sql: ${profit} ;;
+    description: "The sale price minus the cost of an item."
+  }
+
   measure: dynamic_sum {
     type: sum
     sql: ${TABLE}.{% parameter item_to_add_up %} ;;
@@ -81,10 +88,16 @@ view: order_items {
     drill_fields: [id, inventory_items.id, orders.id]
   }
 
-  measure: total_sale_price {
+  measure: total_gross_margin {
     type: sum
-    value_format_name: usd
-    sql: ${sale_price} ;;
-    drill_fields: [returned_month, users.gender, total_sale_price]
+    value_format_name: decimal_2
+    sql: ${profit} ;;
+  }
+
+  measure: percent_of_gross_margin {
+    type: sum
+    value_format_name: percent_2
+    sql: ${gross_margin} ;;
+    html: {{ rendered_value }} | {{percent_of_gross_margin._rendered_value }} of total ;;
   }
 }
