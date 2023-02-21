@@ -93,11 +93,11 @@ view: order_items {
     type: sum
     sql: ${profit} ;;
     value_format_name: "usd"
-    html: {{ rendered_value }} | {{ percent_of_total_profit._rendered_value }} of total ;;
   }
 
   measure: percent_of_total_profit {
-    type:  percent_of_total
+    type: percent_of_total
     sql: ${total_profit} ;;
+    html: {{ rendered_value }} | {{ total_profit._rendered_value }} total ;;
   }
 }

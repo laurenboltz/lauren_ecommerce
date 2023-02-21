@@ -63,11 +63,6 @@ explore: order_items {
   }
 }
 
-explore: order_items_details {
-  group_label: "LoBo's eCommerce"
-}
-
-
 
 # explore: orders {
 #   group_label: "eCommerce"
