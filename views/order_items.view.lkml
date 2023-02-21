@@ -104,7 +104,7 @@ view: order_items {
 
   measure: percent_of_gross_margin {
     type: number
-    sql: ((${total_cost}-${total_gross_margin})/${total_gross_margin}) ;;
+    sql: ((${total_gross_margin}-${total_cost})/${total_gross_margin}) ;;
     value_format_name: percent_2
   }
 }
