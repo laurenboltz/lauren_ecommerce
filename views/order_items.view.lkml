@@ -96,7 +96,7 @@ view: order_items {
 
   measure: total_gross_margin {
     type: sum
-    value_format_name: decimal_2
+    value_format_name: "usd"
     sql: ${gross_margin} ;;
     html: {{ rendered_value }} | {{percent_of_gross_margin._rendered_value }} of total ;;
 
