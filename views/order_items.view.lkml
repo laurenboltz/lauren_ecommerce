@@ -93,7 +93,6 @@ view: order_items {
     type: sum
     sql: ${profit} ;;
     value_format_name: "usd"
-    html: <p style="font-size: 10px">{{ rendered_value }}</p> ;;
   }
 
   measure: percent_of_total_profit {
