@@ -74,7 +74,7 @@ view: orders {
       }
       html:
         {% if value == 'complete' %}
-          <p style="color: black; background-color: green; font-size:100%; text-align:center">{{ rendered_value }}</p>
+          <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
         {% elsif value == 'pending' %}
           <p style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
         {% else %}
