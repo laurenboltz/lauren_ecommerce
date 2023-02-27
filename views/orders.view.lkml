@@ -76,9 +76,9 @@ view: orders {
         {% if value == 'complete' %}
           <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
         {% elsif value == 'pending' %}
-          <p style="color: black; background-color: yellow; font-size:100%; text-align:center">{{ rendered_value }}</p>
+          <p style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
         {% else %}
-          <p style="color: black; background-color: red; font-size:100%; text-align:center">{{ rendered_value }}</p>
+          <p style="color: white; background-color: red; font-size:100%; text-align:center">{{ rendered_value }}</p>
         {% endif %}
       ;;
       description: "The current status of an existing order."
