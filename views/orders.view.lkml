@@ -72,15 +72,15 @@ view: orders {
         label: "Contact Warehouse Support"
         url: "mailto:warehouse@brettcase.com"
       }
-      html:
-        {% if value == 'complete' %}
-          <p><img src="https://findicons.com/files/icons/573/must_have/48/check.png" height=20 width=20>{{ rendered_value }}</p>
-        {% elsif value == 'pending' %}
-          <p><img src="https://findicons.com/files/icons/1681/siena/128/clock_blue.png" height=20 width=20>{{ rendered_value }}</p>
-        {% else %}
-           <p><img src="https://findicons.com/files/icons/719/crystal_clear_actions/64/cancel.png" height=20 width=20>{{ rendered_value }}</p>
-        {% endif %}
-      ;;
+      # html:
+      #   {% if value == 'complete' %}
+      #     <p><img src="https://findicons.com/files/icons/573/must_have/48/check.png" height=20 width=20>{{ rendered_value }}</p>
+      #   {% elsif value == 'pending' %}
+      #     <p><img src="https://findicons.com/files/icons/1681/siena/128/clock_blue.png" height=20 width=20>{{ rendered_value }}</p>
+      #   {% else %}
+      #     <p><img src="https://findicons.com/files/icons/719/crystal_clear_actions/64/cancel.png" height=20 width=20>{{ rendered_value }}</p>
+      #   {% endif %}
+      # ;;
       description: "The current status of an existing order."
     }
 
