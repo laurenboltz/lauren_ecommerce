@@ -1,4 +1,4 @@
-connection: "thelook_events"
+connection: "ecommerce_demo"
 
 # connection: "thelook_bigquery"
 
